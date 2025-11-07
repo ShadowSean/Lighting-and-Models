@@ -13,16 +13,19 @@ Shader "Custom/URP_StencilWrite_FrontObject"
         ColorMask 0
         ZWrite Off
 
-        // Stencil operations
-        Stencil
-        {
-            Ref 1  // Set stencil reference value
-            Comp Always  // Always pass stencil test
-            Pass Replace  // Replace stencil buffer value with reference value
-        }
+        
+        
 
         Pass
         {
+            Stencil
+            {
+                Ref 1  // Set stencil reference value
+                Comp Always  // Always pass stencil test
+                Pass Replace  // Replace stencil buffer value with reference value
+            }
+
+
             HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
